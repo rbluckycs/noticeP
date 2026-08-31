@@ -35,8 +35,8 @@ resource "azurerm_virtual_desktop_host_pool" "hostpool" {
 resource "azurerm_virtual_desktop_host_pool_registration_info" "registrationinfo" {
   hostpool_id     = azurerm_virtual_desktop_host_pool.hostpool.id
   expiration_date = timeadd(timestamp(), "48h")
-  
-   lifecycle {
+
+  lifecycle {
     ignore_changes = [expiration_date]
   }
 }
@@ -62,5 +62,5 @@ resource "azurerm_virtual_desktop_workspace_application_group_association" "ws-d
 resource "azurerm_role_assignment" "avd_user_assignment" {
   scope                = azurerm_virtual_desktop_application_group.dag.id
   role_definition_name = "Desktop Virtualization User"
-  principal_id          = azuread_group.aad_group.object_id
+  principal_id         = azuread_group.aad_group.object_id
 }
