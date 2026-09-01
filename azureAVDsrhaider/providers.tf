@@ -16,3 +16,11 @@ provider "azurerm" {
   resource_provider_registrations = "none"
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-tfstate"
+    storage_account_name = "tfstatesarhaider"
+    container_name       = "tfstate"
+    key                  = "avd-demo.tfstate"
+  }
+}
