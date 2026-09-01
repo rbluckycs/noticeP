@@ -27,7 +27,7 @@ resource "azurerm_virtual_desktop_host_pool" "hp" {
   type               = "Pooled"
   load_balancer_type = "BreadthFirst"
 
-  friendly_name      = "AVD Host Pool"
+  friendly_name      = "AVD Host Pool - Test"
   start_vm_on_connect = true
 }
 
