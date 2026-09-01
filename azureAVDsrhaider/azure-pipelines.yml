@@ -17,6 +17,7 @@ steps:
 
   - script: terraform init
     displayName: 'Terraform Init'
+    workingDirectory: '/azureAVDsrhaider'
     env:
       ARM_CLIENT_ID: $(ARM_CLIENT_ID)
       ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
